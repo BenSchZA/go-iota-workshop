@@ -7,6 +7,7 @@ import (
     "fmt"
     "bytes"
     "sort"
+    "os"
 )
 
 var endpoint = "https://nodes.devnet.thetangle.org"
@@ -14,7 +15,7 @@ var endpoint = "https://nodes.devnet.thetangle.org"
 // The address we want to fetch all transactions for
 // This should contain a set of transactions as provided by the previous example
 // It won't work if you ran the previous example multiple times for the same address
-var address = trinary.Trytes("XBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQMZOCAHYPD")
+var address = trinary.Trytes(os.Getenv("ADDRESS"))
 
 // We need a query object containing the address we want to look for
 var query = FindTransactionsQuery{Addresses: trinary.Hashes{address}}

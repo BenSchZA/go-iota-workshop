@@ -4,10 +4,11 @@ import (
     . "github.com/iotaledger/iota.go/api"
     "github.com/iotaledger/iota.go/trinary"
     "fmt"
+    "os"
 )
 
 // Make sure this address has some funds if you want to test this, you can do this through the faucet on https://faucet.devnet.iota.org
-var address = trinary.Trytes("MBYBBFONQZPYZYZHSEZJ9EBEBAFHAZKUFSPBM9YOXJUUAMBUCQQABOWFNPEAGXIGMAVWWFZWDCZJGUTBBZYDSALMPA")
+var address = trinary.Trytes(os.Getenv("ADDRESS"))
 var endpoint = "https://nodes.devnet.thetangle.org"
 
 func main() {

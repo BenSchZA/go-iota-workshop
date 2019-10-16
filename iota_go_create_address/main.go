@@ -4,9 +4,10 @@ import (
     . "github.com/iotaledger/iota.go/api"
     "github.com/iotaledger/iota.go/trinary"
     "fmt"
+    "os"
 )
 
-var seed = trinary.Trytes("JBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQ")
+var seed = trinary.Trytes(os.Getenv("SEED"))
 var endpoint = "https://nodes.devnet.thetangle.org"
 
 func main() {
