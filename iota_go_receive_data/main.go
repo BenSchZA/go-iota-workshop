@@ -10,7 +10,7 @@ import (
     "os"
 )
 
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 // The address we want to fetch all transactions for
 // This should contain a set of transactions as provided by the previous example

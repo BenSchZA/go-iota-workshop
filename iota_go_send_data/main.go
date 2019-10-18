@@ -7,14 +7,14 @@ import (
     "github.com/iotaledger/iota.go/bundle"
     "strings"
     "fmt"
-
+    "os"
 )
 
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 // We need a dummy seed even though we don't sign, because the API requires a seed to send
-var seed = trinary.Trytes("JBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQ")
-var address = trinary.Trytes("XBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQMZOCAHYPD")
+var seed = trinary.Trytes(os.Getenv("SEED"))
+var address = trinary.Trytes(os.Getenv("ADDRESS"))
 
 // Our data is very long here, it needs to be split over several transactions, 3 in this case
 var data = strings.Repeat("This repeated 100 times! ", 100)

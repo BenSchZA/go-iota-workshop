@@ -5,13 +5,13 @@ import (
     "github.com/iotaledger/iota.go/trinary"
     "github.com/iotaledger/iota.go/converter"
     "fmt"
-
+    "os"
 )
 
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 // The address we want to fetch all transactions for
-var address = trinary.Trytes("ZBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQMZOCAHYPD")
+var address = trinary.Trytes(os.Getenv("ADDRESS"))
 
 // We need a query object containing the address we want to look for
 var query = FindTransactionsQuery{Addresses: trinary.Hashes{address}}

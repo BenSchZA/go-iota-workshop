@@ -8,7 +8,7 @@ import (
 )
 
 var seed = trinary.Trytes(os.Getenv("SEED"))
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 func main() {
     // compose a new API instance

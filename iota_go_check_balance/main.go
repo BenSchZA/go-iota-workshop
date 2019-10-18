@@ -9,7 +9,7 @@ import (
 
 // Make sure this address has some funds if you want to test this, you can do this through the faucet on https://faucet.devnet.iota.org
 var address = trinary.Trytes(os.Getenv("ADDRESS"))
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 func main() {
     // compose a new API instance

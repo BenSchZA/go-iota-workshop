@@ -6,16 +6,16 @@ import (
     "github.com/iotaledger/iota.go/converter"
     "github.com/iotaledger/iota.go/bundle"
     "fmt"
-
+    "os"
 )
 
-var endpoint = "https://nodes.devnet.thetangle.org"
+var endpoint = os.Getenv("API")
 
 // Make sure this seed has some funds, you can do this through the faucet on https://faucet.devnet.iota.org
-var seed = trinary.Trytes("JBN9ZRCOH9YRUGSWIQNZWAIFEZUBDUGTFPVRKXWPAUCEQQFS9NHPQLXCKZKRHVCCUZNF9CZZWKXRZVCWQ")
+var seed = trinary.Trytes(os.Getenv("SEED"))
 
 // Some random address including a checksum, if we don't have the seed for this the iota sent here are lost
-var address = trinary.Trytes("FEEDTHESHEEPS99999999999999999999999999999999999999999999999999999999999999999999LQLNJTGPC")
+var address = trinary.Trytes(os.Getenv("ADDRESS"))
 
 const mwm = 9
 const depth = 3
