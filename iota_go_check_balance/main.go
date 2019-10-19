@@ -8,7 +8,7 @@ import (
 )
 
 // Make sure this address has some funds if you want to test this, you can do this through the faucet on https://faucet.devnet.iota.org
-var address = trinary.Trytes(os.Getenv("ADDRESS"))
+var address = trinary.Trytes(os.Getenv("ADDRESS_CONSUMER"))
 var endpoint = os.Getenv("API")
 
 func main() {
